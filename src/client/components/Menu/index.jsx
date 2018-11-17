@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react/jsx-no-bind */
 import React from 'react';
 import { view } from 'react-easy-state';
 
-import { NavLink as RRLink } from 'react-router-dom';
+import { NavLink as RRLink, Link as NormalLink, withRouter } from 'react-router-dom';
 
 import globalState from '../../store';
 
@@ -13,17 +14,24 @@ import travelImg from './travel.png';
 import buyImg from './buy.png';
 
 const Link = ({ to, children }) => (
-  <RRLink className={menuItem} activeClassName={active} to={to} href={to}>{children}</RRLink>
+  <RRLink
+    className={menuItem}
+    activeClassName={active}
+    to={to}
+    href={to}
+  >
+    {children}
+  </RRLink>
 );
 
 const Menu = () => (
   <div>
     <div className={topBar}>
-      <div className={topBarName}>Hi,<br />Maximilian</div>
+      <div className={topBarName}>Hi,<br />{globalState.client.name}</div>
       <div className={topBarBalance}>
-        <Link to="/">
-          +{globalState.currentBalance}æ
-        </Link>
+        <NormalLink to="/">
+          {globalState.currentBalance}æ
+        </NormalLink>
       </div>
     </div>
     <nav className={menu}>
@@ -40,4 +48,4 @@ const Menu = () => (
   </div>
 );
 
-export default view(Menu);
+export default withRouter(view(Menu));

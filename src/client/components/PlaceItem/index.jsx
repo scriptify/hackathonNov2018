@@ -14,6 +14,7 @@ function getCoverImg(placeItemQuery) {
 }
 
 const PlaceItem = ({ placeId, isMain = false }) => {
+  const amount = 100;
   const place = globalState.places.find(p => p.Id === placeId);
   if (!place)
     return <p>No such place</p>;
@@ -25,10 +26,22 @@ const PlaceItem = ({ placeId, isMain = false }) => {
       title={place.Shortname}
       isMain={isMain}
       subtitle={place.LocationInfo.AreaInfo.Name.en}
-      amount={100}
+      amount={amount}
       id={place.id}
       coverImg={getCoverImg(place)}
       back="/discover"
+      btnText={isMain ? 'Collect reward' : ''}
+      btnClick={() => {
+        globalState.addTransaction({
+          amount,
+          description: place.Shortname
+        });
+        globalState.hooray = {
+          title: 'Hooray!',
+          description: `You just arrived at ${place.Shortname}`,
+          amount
+        };
+      }}
     />
   );
 };

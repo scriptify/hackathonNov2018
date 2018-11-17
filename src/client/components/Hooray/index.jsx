@@ -31,7 +31,13 @@ const Hooray = ({
       <div className={titleClass}>{title}</div>
       <div className={descriptionClass}>
         {description}<br />
-        You earned <b>{amount}æ</b>.
+        {
+          amount && (
+            <span>
+              You earned <b>{amount}æ</b>.
+            </span>
+          )
+        }
       </div>
     </div>
   </div>

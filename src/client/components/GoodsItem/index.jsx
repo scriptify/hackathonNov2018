@@ -3,7 +3,21 @@ import { view } from 'react-easy-state';
 
 import globalState from '../../store';
 
+import treeImg from './tree.png';
+
 import ListItem from '../ListItem';
+
+function buyGood(good) {
+  globalState.addTransaction({
+    amount: good.price * -1,
+    description: good.title
+  });
+  globalState.hooray = {
+    title: 'Cool.',
+    description: 'You just supported the green economy.',
+    img: treeImg
+  };
+}
 
 const GoodsItem = ({ goodsId, isMain = false }) => {
   const good = globalState.greenGoods.find(g => g.id === goodsId);
@@ -22,6 +36,7 @@ const GoodsItem = ({ goodsId, isMain = false }) => {
       isMain={isMain}
       back="/buy"
       btnText={isMain ? 'Invest GreenCoins' : ''}
+      btnClick={() => buyGood(good)}
     />
   );
 };

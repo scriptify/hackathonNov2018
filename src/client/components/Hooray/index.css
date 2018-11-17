@@ -6,6 +6,17 @@
     left: 0;
     z-index: 1000;
     background: #fff;
+    animation: move 0.5s;
+}
+
+@keyframes move {
+    from {
+        top: -100%;
+    }
+
+    to {
+        top: 0;
+    }
 }
 
 .closeBtn {

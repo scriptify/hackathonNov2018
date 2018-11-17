@@ -12,11 +12,29 @@ const greenGoods = [
   }
 ];
 
+function extractGetParam(propName) {
+  const obj = {};
+  window.location.search
+    .slice(1, window.location.search.length)
+    .split('&')
+    .forEach((pair) => {
+      const [prop, value] = pair.split('=');
+      obj[prop] = value;
+    });
+  return obj[propName];
+}
+
 const globalState = store({
   places: [],
   transactions: [],
   greenGoods,
   hooray: null,
+  route: '/',
+  client: {
+    name: extractGetParam('name'),
+    to: extractGetParam('to'),
+    type: extractGetParam('type') || 'consumer'
+  },
   setPlaces(places) {
     this.places = places;
   },
@@ -26,6 +44,7 @@ const globalState = store({
     this.transactions.push({
       amount, description, type, distance, travelType
     });
+    this.transactions = this.transactions.reverse();
   },
   get currentBalance() {
     return this.transactions.reduce((acc, el) => acc + el.amount, 0);
