@@ -1,0 +1,30 @@
+.menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    box-shadow: 0 -3px 25px rgba(0, 0, 0, 0.6);
+    background: #fff;
+}
+
+.menuItem {
+    width: 33.33%;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    text-align: center;
+}
+
+.menuItem img {
+    height: 35px;
+    width: auto;
+    filter: grayscale(1);
+    transition: 0.3s filter;
+}
+
+.active {
+    border-top: solid 1px #3ca6ff;
+}
+
+.active img {
+    filter: grayscale(0);
+}
