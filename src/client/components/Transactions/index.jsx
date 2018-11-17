@@ -15,7 +15,7 @@ import {
 const Transactions = () => (
   <div className={currentBalanceClass}>
     <h1>
-      {globalState.currentBalance}æ
+      {globalState.currentBalance}℈
     </h1>
     <div className={transactions}>
       {

@@ -34,7 +34,7 @@ const Hooray = ({
         {
           amount && (
             <span>
-              You earned <b>{amount}æ</b>.
+              You earned <b>{amount}℈</b>.
             </span>
           )
         }

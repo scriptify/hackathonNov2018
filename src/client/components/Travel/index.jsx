@@ -50,7 +50,7 @@ const Travel = () => (
           <div className={priceClass} key={price.name}>
             <span>1km {price.name}</span>
             <span> turns into</span>
-            <span> {price.value}æ</span>
+            <span> {price.value}℈</span>
           </div>
         ))
       }

@@ -30,7 +30,7 @@ const Menu = () => (
       <div className={topBarName}>Hi,<br />{globalState.client.name}</div>
       <div className={topBarBalance}>
         <NormalLink to="/">
-          {globalState.currentBalance}æ
+          {globalState.currentBalance}℈
         </NormalLink>
       </div>
     </div>

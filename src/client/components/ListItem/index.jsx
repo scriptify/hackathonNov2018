@@ -44,7 +44,7 @@ const PlaceItem = ({
         <div className={placeItemContent}>
           <div className={placeItemTitle}>{title}</div>
           <div className={placeItemSubtitle}>{subtitle}</div>
-          <div className={placeItemAdd}>{amount}æ</div>
+          <div className={placeItemAdd}>{amount}℈</div>
         </div>
         {
           isMain && mainInfo
