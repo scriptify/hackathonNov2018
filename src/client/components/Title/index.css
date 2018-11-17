@@ -1,0 +1,16 @@
+.title {
+    font-size: 1.8em;
+    font-weight: lighter;
+    padding: 20px;
+    text-align: center;
+    transition: 0.4s margin-top;
+}
+
+.contentLoading {
+    margin-top: 35vh;
+}
+
+.title img {
+    filter: grayscale(0.8);
+    margin: 0 auto;
+}

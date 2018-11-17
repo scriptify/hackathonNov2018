@@ -1,20 +1,3 @@
 .places {
     padding: 20px;
 }
-
-.mainContent h1 {
-    font-size: 1.8em;
-    font-weight: lighter;
-    padding: 20px;
-    text-align: center;
-    transition: 0.4s margin-top;
-}
-
-.contentLoading {
-    margin-top: 35vh;
-}
-
-.mainContent img {
-    filter: grayscale(0.8);
-    margin: 0 auto;
-}

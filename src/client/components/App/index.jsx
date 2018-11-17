@@ -7,6 +7,7 @@ import Discover from '../Discover';
 import Travel from '../Travel';
 import Buy from '../Buy';
 import PlaceItem from '../PlaceItem';
+import GoodsItem from '../GoodsItem';
 import Transactions from '../Transactions';
 
 import './index.css';
@@ -22,6 +23,11 @@ const App = () => (
       />
       <Route exact path="/discover" component={Discover} />
       <Route exact path="/travel" component={Travel} />
+      <Route
+        exact
+        path="/buy/:goodId"
+        render={({ match: { params: { goodId } } }) => <GoodsItem goodsId={goodId} isMain />}
+      />
       <Route exact path="/buy" component={Buy} />
       <Route exact path="/" component={Transactions} />
     </div>

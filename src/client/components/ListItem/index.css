@@ -76,3 +76,16 @@
     height: 25px;
     width: auto;
 }
+
+.actionBtn {
+    background: #3ca6ff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 7px;
+    text-align: center;
+    align-self: center;
+    width: 80vw;
+    margin-top: 15px;
+    cursor: pointer;
+}
