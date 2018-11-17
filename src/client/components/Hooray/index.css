@@ -1,0 +1,51 @@
+.hooray {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: #fff;
+}
+
+.closeBtn {
+    text-align: right;
+}
+
+.closeBtn button {
+    height: 60px;
+    width: 60px;
+    background: none;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-bottom-left-radius: 50%;
+    font-size: 1.5em;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container img {
+    height: 100px;
+    width: auto;
+}
+
+.title {
+    font-size: 2em;
+}
+
+.description {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+.description b {
+    font-size: 1.4em;
+}

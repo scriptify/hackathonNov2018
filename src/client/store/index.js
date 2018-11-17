@@ -16,17 +16,22 @@ const globalState = store({
   places: [],
   transactions: [],
   greenGoods,
+  hooray: null,
   setPlaces(places) {
     this.places = places;
   },
-  addTransaction({ amount, description, type = 'discover' }) {
-    this.transactions.push({ amount, description, type });
+  addTransaction({
+    amount, description, type = 'discover', distance, travelType
+  }) {
+    this.transactions.push({
+      amount, description, type, distance, travelType
+    });
   },
   get currentBalance() {
     return this.transactions.reduce((acc, el) => acc + el.amount, 0);
   },
   get distanceTravelled() {
-    return this.transactions.reduce((acc, el) => acc + (el.type === 'travel' ? el.amount : 0), 0);
+    return this.transactions.reduce((acc, el) => acc + (el.type === 'travel' ? el.distance : 0), 0);
   }
 });
 
