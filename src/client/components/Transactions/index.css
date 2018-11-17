@@ -1,0 +1,24 @@
+.currentBalance {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.currentBalance h1 {
+    font-weight: lighter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    font-size: 3em;
+}
+
+.positive {
+    color: #349e03b6;
+}
+
+.negative {
+    color: #e20000b6;
+}
